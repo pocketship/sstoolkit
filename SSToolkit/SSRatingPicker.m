@@ -61,8 +61,6 @@
 
 
 - (void)setEmptyStarImage:(UIImage *)emptyStarImage {
-	[emptyStarImage retain];
-	[_emptyStarImage release];
 	_emptyStarImage = emptyStarImage;
 	
 	[self setNeedsDisplay];
@@ -70,8 +68,6 @@
 
 
 - (void)setFilledStarImage:(UIImage *)filledStarImage {
-	[filledStarImage retain];
-	[_filledStarImage release];
 	_filledStarImage = filledStarImage;
 	
 	[self setNeedsDisplay];
@@ -89,16 +85,6 @@
 	_starSpacing = starSpacing;
 	
 	[self setNeedsDisplay];
-}
-
-
-#pragma mark - NSObject
-
-- (void)dealloc {
-	[_emptyStarImage release];
-	[_filledStarImage release];
-	[_textLabel release];
-	[super dealloc];
 }
 
 

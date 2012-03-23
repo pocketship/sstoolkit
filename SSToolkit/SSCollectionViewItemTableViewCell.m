@@ -22,8 +22,7 @@
 
 - (void)setItems:(NSArray *)someItems {
 	[_items makeObjectsPerformSelector:@selector(removeFromSuperview)];
-	[_items release];
-	_items = [someItems retain];
+	_items = someItems;
 	
 	if (_items == nil) {
 		return;
@@ -43,8 +42,6 @@
 
 - (void)dealloc {
 	self.collectionView = nil;
-	self.items = nil;
-	[super dealloc];
 }
 
 

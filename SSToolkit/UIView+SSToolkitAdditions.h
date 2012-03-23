@@ -50,13 +50,6 @@
 - (void)fadeOut;
 
 /**
- Fade out the receiver and remove from its super view
- 
- The receiver will fade out in `0.2` seconds and be removed from its `superview` when the animation completes.
- */
-- (void)fadeOutAndRemoveFromSuperview;
-
-/**
  Fade in the receiver.
  
  The receiver will fade in in `0.2` seconds.

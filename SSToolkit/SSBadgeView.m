@@ -29,8 +29,6 @@
 @synthesize highlighted = _highlighted;
 
 - (void)setBadgeColor:(UIColor *)badgeColor {
-	[badgeColor retain];
-	[_badgeColor release];
 	_badgeColor = badgeColor;
 	
 	[self setNeedsDisplay];
@@ -38,8 +36,6 @@
 
 
 - (void)setHighlightedBadgeColor:(UIColor *)highlightedBadgeColor {
-	[highlightedBadgeColor retain];
-	[_highlightedBadgeColor release];
 	_highlightedBadgeColor = highlightedBadgeColor;
 	
 	[self setNeedsDisplay];
@@ -47,8 +43,6 @@
 
 
 - (void)setBadgeImage:(UIImage *)badgeImage {
-	[badgeImage retain];
-	[_badgeImage release];
 	_badgeImage = badgeImage;
 	
 	[self setNeedsDisplay];
@@ -56,8 +50,6 @@
 
 
 - (void)setHighlightedBadgeImage:(UIImage *)highlightedBadgeImage {
-	[highlightedBadgeImage retain];
-	[_highlightedBadgeImage release];
 	_highlightedBadgeImage = highlightedBadgeImage;
 	
 	[self setNeedsDisplay];
@@ -90,18 +82,6 @@
 
 + (UIColor *)defaultBadgeColor {
 	return [UIColor colorWithRed:0.541f green:0.596f blue:0.694f alpha:1.0f];
-}
-
-
-#pragma mark - NSObject
-
-- (void)dealloc {
-	[_textLabel release];
-	[_badgeColor release];
-	[_highlightedBadgeColor release];
-	[_badgeImage release];
-	[_highlightedBadgeImage release];
-	[super dealloc];
 }
 
 

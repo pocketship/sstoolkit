@@ -931,6 +931,7 @@
 					armv6,
 					armv7,
 				);
+				CLANG_ENABLE_OBJC_ARC = YES;
 				COPY_PHASE_STRIP = NO;
 				DSTROOT = /tmp/SSToolkit.dst;
 				GCC_C_LANGUAGE_STANDARD = "compiler-default";
@@ -977,6 +978,7 @@
 					armv6,
 					armv7,
 				);
+				CLANG_ENABLE_OBJC_ARC = YES;
 				DSTROOT = /tmp/SSToolkit.dst;
 				GCC_C_LANGUAGE_STANDARD = "compiler-default";
 				GCC_MODEL_TUNING = G5;

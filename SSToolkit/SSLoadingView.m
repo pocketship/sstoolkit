@@ -7,6 +7,7 @@
 //
 
 #import "SSLoadingView.h"
+#import "NSBundle+SSToolkitAdditions.h"
 
 static CGFloat interiorPadding = 20.0f;
 static CGFloat indicatorSize = 20.0f;
@@ -22,15 +23,6 @@ static CGFloat indicatorRightMargin = 8.0f;
 
 @synthesize textLabel = _textLabel;
 @synthesize activityIndicatorView = _activityIndicatorView;
-
-
-#pragma mark - NSObject
-
-- (void)dealloc {	
-	[_textLabel release];
-	[_activityIndicatorView release];
-	[super dealloc];
-}
 
 
 #pragma mark - UIView
@@ -98,7 +90,7 @@ static CGFloat indicatorRightMargin = 8.0f;
 	[self addSubview:_activityIndicatorView];
 	
 	// Defaults
-	_textLabel.text = @"Loading...";
+	_textLabel.text = SSToolkitLocalizedString(@"Loading...");
 	_textLabel.font = [UIFont systemFontOfSize:16.0f];
 	_textLabel.textColor = [UIColor darkGrayColor];
 	_textLabel.shadowColor = [UIColor whiteColor];

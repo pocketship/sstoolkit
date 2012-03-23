@@ -37,16 +37,6 @@
 }
 
 
-#pragma mark - NSObject
-
-- (void)dealloc {
-	self.reloadButton = nil;
-	self.stopButton = nil;
-	[_textFieldBackgroundView release];
-	[super dealloc];
-}
-
-
 #pragma mark - UIView
 
 - (id)initWithCoder:(NSCoder *)aDecoder {

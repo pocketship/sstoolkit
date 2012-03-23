@@ -10,7 +10,7 @@
 
 @interface SSCollectionViewItem ()
 
-@property (nonatomic, retain) NSIndexPath *indexPath;
+@property (nonatomic, strong) NSIndexPath *indexPath;
 @property (nonatomic, assign) SSCollectionView *collectionView;
 
 @end

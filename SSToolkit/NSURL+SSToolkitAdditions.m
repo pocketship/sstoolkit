@@ -18,7 +18,6 @@
 	va_end(arguments);
 	
 	NSURL *url = [NSURL URLWithString:string];
-	[string release];
 	
 	return url;
 }

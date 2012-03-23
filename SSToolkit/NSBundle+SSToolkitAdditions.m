@@ -14,7 +14,7 @@
 	static NSBundle *ssToolkitBundle = nil;
 	static dispatch_once_t onceToken;
 	dispatch_once(&onceToken, ^{
-		NSString *bundlePath = [[[NSBundle mainBundle] resourcePath] stringByAppendingPathComponent:@"SSToolkitResources.bundle"];
+		NSString *bundlePath = [[[NSBundle mainBundle] resourcePath] stringByAppendingPathComponent:kSSToolkitBundleName];
 		ssToolkitBundle = [[NSBundle alloc] initWithPath:bundlePath];
 	});
 	return ssToolkitBundle;

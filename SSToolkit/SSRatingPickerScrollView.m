@@ -12,6 +12,7 @@
 #import "SSTextField.h"
 #import "SSTextView.h"
 #import "SSDrawingUtilities.h"
+#import "NSBundle+SSToolkitAdditions.h"
 
 @implementation SSRatingPickerScrollView {
 	UIView *_topView;
@@ -25,18 +26,6 @@
 @synthesize ratingPicker = _ratingPicker;
 @synthesize titleTextField = _titleTextField;
 @synthesize reviewTextView = _reviewTextView;
-
-#pragma mark - NSObject
-
-- (void)dealloc {
-	[_topView release];
-	[_gradientView release];
-	[_ratingPicker release];
-	[_titleTextField release];
-	[_lineView release];
-	[_reviewTextView release];
-	[super dealloc];
-}
 
 
 #pragma mark - UIView
@@ -70,7 +59,7 @@
 		_titleTextField = [[SSTextField alloc] initWithFrame:CGRectZero];
 		_titleTextField.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleBottomMargin;
 		_titleTextField.font = font;
-		_titleTextField.placeholder = @"Title";
+		_titleTextField.placeholder = SSToolkitLocalizedString(@"Title");
 		_titleTextField.textEdgeInsets = UIEdgeInsetsMake(10.0f, 8.0f, 10.0f, 8.0f);
 		[self addSubview:_titleTextField];
 		
@@ -81,7 +70,7 @@
 
 		_reviewTextView = [[SSTextView alloc] initWithFrame:CGRectZero];
 		_reviewTextView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleBottomMargin;
-		_reviewTextView.placeholder = @"Review (Optional)";
+		_reviewTextView.placeholder = SSToolkitLocalizedString(@"Review (Optional)");
 		_reviewTextView.font = font;
 		_reviewTextView.scrollEnabled = NO;
 		_reviewTextView.delegate = self;
