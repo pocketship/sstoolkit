@@ -114,7 +114,6 @@
 	_webView.delegate = self;
 	[self addSubview:_webView];
     
-	[_lastRequest release];
 	_lastRequest = nil;
 }
 
@@ -286,7 +285,6 @@
 
 
 - (void)loadData:(NSData *)data MIMEType:(NSString *)MIMEType textEncodingName:(NSString *)encodingName baseURL:(NSURL *)baseURL {
-	[_lastRequest release];
 	_lastRequest = nil;
     
 	[_webView loadData:data MIMEType:MIMEType textEncodingName:encodingName baseURL:baseURL];
@@ -294,7 +292,6 @@
 
 
 - (void)loadHTMLString:(NSString *)string baseURL:(NSURL *)baseURL {
-	[_lastRequest release];
 	_lastRequest = nil;
     
 	if (!baseURL) {
@@ -305,7 +302,6 @@
 
 
 - (void)loadRequest:(NSURLRequest *)aRequest {
-	[_lastRequest release];
 	_lastRequest = nil;
     
 	[_webView loadRequest:aRequest];
